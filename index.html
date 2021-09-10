@@ -5,7 +5,7 @@
  -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
 	<title>Lesson 2</title>
@@ -28,11 +28,12 @@
 		</div>
 		<nav class="menu">
 			<div class="menu__list">
-				<a menu__item
+				<a class="menu__item"
 					href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/Dealing_with_files">Назад</a>
-				<a menu__item href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web">Getting
+				<a class="menu__item"
+					href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web">Getting
 					started with the web</a>
-				<a menu__item
+				<a class="menu__item"
 					href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/CSS_basics">Далее</a>
 
 			</div>
@@ -69,7 +70,7 @@
 			<p class="text">Если бы мы хотели, чтобы строка стояла сама по себе, мы могли бы указать, что это абзац,
 				заключая его в теги абзаца:</p>
 			<mark class="right">
-				&ltp&gtМоя кошка очень раздражена&lt/p&gt
+				&lt;p&gt;Моя кошка очень раздражена&lt;/p&gt;
 			</mark>
 			<h3>Анатомия HTML элемента</h3>
 			<p class="text">Давайте рассмотрим элемент абзаца более подробно.</p>
@@ -102,21 +103,22 @@
 			<h3>Вложенные элементы</h3>
 			<p class="text">Вы также можете располагать элементы внутри других элементов — это называется <b>вложением</b>.
 				Если мы хотим заявить, что наша кошка очень раздражена, мы можем заключить слово "очень" в элемент
-				&ltstrong&gt , который указывает, что слово должно быть сильно акцентированно:</p>
-			<mark class="right">&ltp&gtМоя кошка &ltstrong&gtочень&lt/strong&gt раздражена.&lt/p&gt</mark>
+				&lt;strong&gt; , который указывает, что слово должно быть сильно акцентированно:</p>
+			<mark class="right">&lt;p&gt;Моя кошка &lt;strong&gt;очень&lt;/strong&gt; раздражена.&lt;/p&gt;</mark>
 			<p class="text">Вы, однако, должны убедиться, что ваши элементы правильно вложены: в примере выше мы открыли
-				первым элемент &ltp&gt, затем элемент &ltstrong&gt, потом мы должны закрыть сначала элемент &ltstrong&gt,
-				затем &ltp&gt. Приведённое ниже неверно:</p>
-			<mark class="unright" style="background-color: red;">&ltp&gtМоя кошка &ltstrong&gt очень
-				раздражена.&lt/p&gt&lt/strong&gt</mark>
+				первым элемент &lt;p&gt;, затем элемент &lt;strong&gt;, потом мы должны закрыть сначала элемент
+				&lt;strong&gt;,
+				затем &lt;p&gt;. Приведённое ниже неверно:</p>
+			<mark class="unright" style="background-color: red;">&lt;p&gt;Моя кошка &lt;strong&gt; очень
+				раздражена.&lt;/p&gt;&lt;/strong&gt;</mark>
 			<p class="text">Элементы должны открываться и закрываться правильно, поэтому они явно располагаются внутри или
 				снаружи друг друга. Если они перекрываются, как в примере выше, ваш веб-браузер будет пытаться сделать
 				наилучшее предположение на основе того, что вы пытались сказать, что может привести к неожиданным
 				результатам. Так что не стоит этого делать!</p>
 			<h3>Пустые элементы</h3>
 			<p class="text">Некоторые элементы не имеют контента, и называются <b>пустыми элементами</b>. Возьмём элемент
-				&ltimg&gt, который уже имеется в нашем HTML:</p>
-			<mark class="right">&ltimg src="images/firefox-icon.png" alt="Моё тестовое изображение"&gt</mark>
+				&lt;img&gt;, который уже имеется в нашем HTML:</p>
+			<mark class="right">&lt;img src="images/firefox-icon.png" alt="Моё тестовое изображение"&gt;</mark>
 			<p class="text">Он содержит два атрибута, но не имеет закрывающего тега </img>, и никакого внутреннего
 				контента. Это потому, что элемент изображения не оборачивает контент для влияния на него. Его целью является
 				вставка изображения в HTML страницу в нужном месте.</p>
@@ -128,54 +130,56 @@
 					с файлами</a>):</p>
 			<pre>
 			<mark class="right">
-&lt!DOCTYPE html&gt <br>
-&lthtml&gt <br>
-&lthead&gt <br>
-   &ltmeta charset="utf-8"&gt <br>
-   &lttitle&gtМоя тестовая страница&lttitle&gt <br>
-&lt/head&gt <br>
-&ltbody&gt <br>
-   &ltimg src="images/firefox-icon.png" alt="Моё тестовое изображение"&gt <br>
-&lt/body&gt <br>
-&lt/html&gt <br>
+&lt;!DOCTYPE html&gt; <br>
+&lt;html&gt; <br>
+&lt;head&gt; <br>
+   &lt;meta charset="utf-8"&gt; <br>
+   &lt;title&gt;Моя тестовая страница&lt;title&gt; <br>
+&lt;/head&gt; <br>
+&lt;body&gt; <br>
+   &lt;img src="images/firefox-icon.png" alt="Моё тестовое изображение"&gt; <br>
+&lt;/body&gt; <br>
+&lt;/html&gt; <br>
 </mark>
 			</pre>
 			<p class="text">Здесь мы имеем:</p>
 			<ul class="list">
 				<li>
-					<i>&lt!DOCTYPE html&gt</i> — доктайп. В прошлом, когда HTML был молод (около 1991/1992), доктайпы должны
+					<i>&lt;!DOCTYPE html&gt;</i> — доктайп. В прошлом, когда HTML был молод (около 1991/1992), доктайпы
+					должны
 					были выступать в качестве ссылки на набор правил, которым HTML страница должна была следовать, чтобы
 					считаться хорошим HTML, что могло означать автоматическую проверку ошибок и другие полезные вещи. Однако
 					в наши дни, никто не заботится об этом, и они на самом деле просто исторический артефакт, который должен
 					быть включён для того, что бы все работало правильно. На данный момент это все, что вам нужно знать.
 				</li>
 				<li>
-					<i>&lthtml&gt&lt/html&gt</i> — элемент <a
-						href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/html">&lthtml&gt</a>. Этот элемент
+					<i>&lt;html&gt;&lt;/html&gt;</i> — элемент <a
+						href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/html">&lt;html&gt;</a>. Этот элемент
 					оборачивает весь контент на всей странице, и иногда известен как корневой элемент.
 				</li>
 				<li>
-					<i>&lthead&gt&lt/head&gt</i> — элемент <a
-						href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/head">&lthead&gt</a>. Этот элемент
+					<i>&lt;head&gt;&lt;/head&gt;</i> — элемент <a
+						href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/head">&lt;head&gt;</a>. Этот элемент
 					выступает в качестве контейнера для всего, что вы пожелаете включить на HTML страницу, но не являющегося
 					контентом, который вы показываете пользователям вашей страницы. К ним относятся такие вещи, как ключевые
 					слова и описание страницы, которые будут появляться в результатах поиска, CSS стили нашего контента,
 					кодировка и многое другое.
 				</li>
 				<li>
-					<i>&ltbody&gt&lt/body&gt</i> — элемент <a
-						href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/body">&ltbody&gt</a>. В нем содержится
+					<i>&lt;body&gt;&lt;/body&gt;</i> — элемент <a
+						href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/body">&lt;body&gt;</a>. В нем содержится
 					весь контент, который вы хотите показывать пользователям, когда они посещают вашу страницу, будь то
 					текст, изображения, видео, игры, проигрываемые аудиодорожки или что-то ещё.
 				</li>
 				<li>
-					<i>&ltmeta charset="utf-8"&gt</i> — этот элемент устанавливает UTF-8 кодировку вашего документа, которая
+					<i>&lt;meta charset="utf-8"&gt;</i> — этот элемент устанавливает UTF-8 кодировку вашего документа,
+					которая
 					включает в себя большинство символов из всех известных человечеству языков. По сути, теперь документ
 					может обрабатывать любой текстовый контент, который вы в него вложите. Нет причин не устанавливать её,
 					так как это может помочь избежать некоторых проблем в дальнейшем.
 				</li>
-				<li><i>&lttitle&gt&lt/title&gt</i> — элемент <a
-						href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/title">&lttitle&gt</a>. Этот элемент
+				<li><i>&lt;title&gt;&lt;/title&gt;</i> — элемент <a
+						href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/title">&lt;title&gt;</a>. Этот элемент
 					устанавливает заголовок для вашей страницы, который является названием, появляющимся на вкладке браузера
 					загружаемой страницы, и используется для описания страницы, когда вы добавляете её в закладки/избранное.
 				</li>
@@ -187,7 +191,7 @@
 			<h2>Изображения</h2>
 			<p class="text">Давайте снова обратим наше внимание на элемент <a
 					href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/img">изображения</a>:</p>
-			<mark class="right">&ltimg src="images/firefox-icon.png" alt="Mоё тестовое изображение"&gt</mark>
+			<mark class="right">&lt;img src="images/firefox-icon.png" alt="Mоё тестовое изображение"&gt;</mark>
 			<p class="text">Как было сказано раньше, код встраивает изображение на нашу страницу в нужном месте. Это
 				делается с помощью атрибута <i>src</i> (source, источник), который содержит путь к нашему файлу изображения.
 			</p>
@@ -223,25 +227,25 @@
 					заголовков или подзаголовков. Точно так же, как книга имеет название, названия глав и подзаголовков, HTML
 					документ может содержать то же самое. HTML включает шесть уровней заголовков
 					<a
-						href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements">&lth1&gt–&lth6&gt</a>,
+						href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements">&lt;h1&gt;–&lt;h6&gt;</a>,
 					хотя обычно вы будете использовать не более 3-4 :
 				</p>
 				<mark class="right">
-					&lth1&gtМой главный заголовок&lth1&gt <br>
-					&lth2&gtМой заголовок верхнего уровня&lth2&gt <br>
-					&lth3&gtМой подзаголовок&lth3&gt <br>
-					&lth4&gtМой под-подзаголовок&lth4&gt <br>
+					&lt;h1&gt;Мой главный заголовок&lt;h1&gt; <br>
+					&lt;h2&gt;Мой заголовок верхнего уровня&lt;h2&gt; <br>
+					&lt;h3&gt;Мой подзаголовок&lt;h3&gt; <br>
+					&lt;h4&gt;Мой под-подзаголовок&lt;h4&gt; <br>
 				</mark>
 				<p class="text">Теперь попробуйте добавить подходящее название для вашей HTML страницы, чуть выше элемента
-					<i>&ltimg&gt.</i>
+					<i>&lt;img&gt;.</i>
 				</p>
 				<h3>Абзацы</h3>
 				<p class="text">Как было сказано раньше, элемент <a
-						href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/p">&ltp&gt</a> предназначен для абзацев
+						href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/p">&lt;p&gt;</a> предназначен для абзацев
 					текста; вы будете использовать их регулярно при разметке текстового контента:</p>
-				<mark class="right">&ltp&gtЭто одиночный абзац&lt/p&gt</mark>
+				<mark class="right">&lt;p&gt;Это одиночный абзац&lt;/p&gt;</mark>
 				<p class="text">Добавьте свой образец текста (вы создавали его в статье Каким должен быть ваш веб-сайт?) в
-					один или несколько абзацев, расположенных прямо под элементом &ltimg&gt.</p>
+					один или несколько абзацев, расположенных прямо под элементом &lt;img&gt;.</p>
 				<h3>Списки</h3>
 				<p class="text">Большая часть веб-контента является списками и HTML имеет специальные элементы для них.
 					Разметка списка всегда состоит по меньшей мере из двух элементов. Наиболее распространёнными типами
@@ -249,29 +253,29 @@
 				<ol class="list">
 					<li><b>Ненумерованные списки</b> - это списки, где порядок пунктов не имеет значения, как в списке
 						покупок. Они оборачиваются в элемент <a
-							href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/ul">&ltul&gt</a>.</li>
+							href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/ul">&lt;ul&gt;</a>.</li>
 					<li><b>Нумерованные списки</b> - это списки, где порядок пунктов имеет значение, как в рецепте. Они
 						оборачиваются в элемент <a
-							href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/ol">&ltol&gt</a>.</li>
+							href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/ol">&lt;ol&gt;</a>.</li>
 				</ol>
 				<P class="text">Каждый пункт внутри списков располагается внутри элемента <a
-						href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/li">&ltli&gt</a> (list item, элемент
+						href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/li">&lt;li&gt;</a> (list item, элемент
 					списка).</P>
 				<p class="text">Например, если мы хотим включить часть следующего фрагмента абзаца в список:</p>
 				<mark class="right">
-					&ltp&gtMozilla, мы являемся мировым сообществом технологов, мыслителей и строителей, работающих вместе
-					... &lt/p&gt
+					&lt;p&gt;Mozilla, мы являемся мировым сообществом технологов, мыслителей и строителей, работающих вместе
+					... &lt;/p&gt;
 				</mark>
 				<p class="text">Мы могли бы изменить разметку на эту:</p>
 				<pre>
 					<mark class="right">
-&ltp&gtMozilla, мы являемся мировым сообществом&lt/p&gt
-&ltul&gt
-   &ltli&gtтехнологов&lt/li&gt
-   &ltli&gtмыслителей&lt/li&gt
-   &ltli&gtстроителей&lt/li&gt
-&lt/ul&gt
-&ltp&gtработающих вместе ... &lt/p&gt
+&lt;p&gt;Mozilla, мы являемся мировым сообществом&lt;/p&gt;
+&lt;ul&gt;
+   &lt;li&gt;технологов&lt;/li&gt;
+   &lt;li&gt;мыслителей&lt;/li&gt;
+   &lt;li&gt;строителей&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;работающих вместе ... &lt;/p&gt;
 					</mark>
 </pre>
 				<p class="text">Попробуйте добавить упорядоченный или неупорядоченный список на свою страницу.</p>
@@ -282,23 +286,23 @@
 			<h2>Ссылки</h2>
 			<p class="text">Ссылки очень важны — это то, что делает Интернет Интернетом. Чтобы добавить ссылку, нам нужно
 				использовать простой элемент — <a
-					href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/A">&lta&gt</a> — a это сокращение от
+					href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/A">&lt;a&gt;</a> — a это сокращение от
 				"anchor" ("якорь"). Чтобы текст в вашем абзаце стал ссылкой, выполните следующие действия:</p>
 			<ol class="list">
 				<li>Выберите некоторый текст. Мы выбрали текст "Манифест Mozilla".</li>
-				<li>Оберните текст в элемент <i>&lta&gt</i>, например так <br>
+				<li>Оберните текст в элемент <i>&lt;a&gt;</i>, например так <br>
 					<mark class="right">
-						&lta&gtМанифест Mozilla&lt/a&gt
+						&lt;a&gt;Манифест Mozilla&lt;/a&gt;
 					</mark>
 				</li>
-				<li>Задайте элементу <i>&lta&gt</i> атрибут href, например так: <br>
+				<li>Задайте элементу <i>&lt;a&gt;</i> атрибут href, например так: <br>
 					<mark class="right">
-						&lta href=""&gtМанифест Mozilla&lt/a&gt
+						&lt;a href=""&gt;Манифест Mozilla&lt;/a&gt;
 					</mark>
 				</li>
 				<li>Заполните значение этого атрибута веб-адресом, на который вы хотите указать ссылку: <br>
 					<mark class="right">
-						&lta href="https://www.mozilla.org/ru/about/manifesto/details/">Манифест Mozilla&lt/a&gt
+						&lt;a href="https://www.mozilla.org/ru/about/manifesto/details/">Манифест Mozilla&lt;/a&gt;
 					</mark>
 				</li>
 			</ol>
@@ -332,11 +336,12 @@
 	<footer class="footer">
 		<nav class="menu">
 			<div class="menu__list">
-				<a menu__item
+				<a class="menu__item"
 					href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/Dealing_with_files">Назад</a>
-				<a menu__item href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web">Getting
+				<a class="menu__item"
+					href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web">Getting
 					started with the web</a>
-				<a menu__item
+				<a class="menu__item"
 					href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/CSS_basics">Далее</a>
 			</div>
 		</nav>
